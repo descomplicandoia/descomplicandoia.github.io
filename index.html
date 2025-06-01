@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 Descomplicando a Inteligência Artificial - Letramento Digital para Magistrados</title>
+    
+    <!-- Favicon com ícone de cérebro -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    
+    <!-- Meta tags para SEO -->
+    <meta name="description" content="Portal de Letramento Digital para Magistrados e Servidores do TJSP. Prompts especializados de IA para o judiciário brasileiro.">
+    <meta name="keywords" content="IA, Inteligência Artificial, Direito, Magistrados, TJSP, Letramento Digital">
+    <meta name="author" content="Milene Graciano Pereira">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .brain-icon {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #4a5568;
+            margin-bottom: 50px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .footer p {
+            margin-bottom: 5px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 40px;
+            }
+
+            .cta-button {
+                padding: 16px 30px;
+                font-size: 1.1rem;
+            }
+
+            .brain-icon {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 14px 25px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Efeito de partículas no fundo */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) { width: 10px; height: 10px; left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { width: 15px; height: 15px; left: 20%; animation-delay: 1s; }
+        .particle:nth-child(3) { width: 8px; height: 8px; left: 30%; animation-delay: 2s; }
+        .particle:nth-child(4) { width: 12px; height: 12px; left: 40%; animation-delay: 3s; }
+        .particle:nth-child(5) { width: 6px; height: 6px; left: 50%; animation-delay: 4s; }
+        .particle:nth-child(6) { width: 14px; height: 14px; left: 60%; animation-delay: 5s; }
+        .particle:nth-child(7) { width: 9px; height: 9px; left: 70%; animation-delay: 6s; }
+        .particle:nth-child(8) { width: 11px; height: 11px; left: 80%; animation-delay: 7s; }
+        .particle:nth-child(9) { width: 7px; height: 7px; left: 90%; animation-delay: 8s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10%, 90% { opacity: 1; }
+            50% { transform: translateY(-100px) rotate(180deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Partículas de fundo -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="container">
+        <div class="brain-icon">🧠</div>
+        
+        <h1>DESCOMPLICANDO A INTELIGÊNCIA ARTIFICIAL</h1>
+        
+        <p class="subtitle">Letramento Digital para Magistrados e Servidores do TJSP</p>
+        
+        <a href="https://descomplicandoia.github.io/segundograu/" class="cta-button">
+            🏛️ Prática em Segundo Grau
+        </a>
+        
+        <div class="footer">
+            <p><strong>Desenvolvido por:</strong> Milene Graciano Pereira</p>
+            <p><strong>Escola Paulista da Magistratura - Tribunal de Justiça de São Paulo</strong></p>
+        </div>
+    </div>
+</body>
+</html>
